@@ -1,4 +1,5 @@
-# Настройка маршрутизации
+# System Security
+## Настройка маршрутизации
 ```
 ip -4 a s --- ip v4 all show
 ip r s --- ip route show
@@ -7,7 +8,7 @@ ip r s --- ip route show
 
 ip r a 192.168.59.0/24 via 192.168.60.253
 ```
-## настраиваем форвард пакетов
+* Настраиваем форвард пакетов
 ```
 sysctl -a
 sysctl -w net.ipv4.ip_forward=1
@@ -16,7 +17,7 @@ nano /etc/sysctl.conf
 	net.ipv4.ip_forward=1
 sysctl -p
 ```
-## Настраиваем постоянный маршрутизации
+* Настраиваем постоянный маршрутизации
 ```
 nano /etc/network/interface
 	up ip route replace 192.168.59.0/24 via 192.168.60.253
